@@ -15,9 +15,10 @@ public class CategoryDto {
     private Integer id;
     private String code;
     private String description;
-    private List<ProductDto> productList;
     @JsonIgnore
-    public CategoryDto fromEntity(Category category){
+    private List<ProductDto> productList;
+
+    public static CategoryDto fromEntity(Category category){
         if(category==null){
             return null;
             //TODO Throw Exception
@@ -28,7 +29,7 @@ public class CategoryDto {
                 .description(category.getDescription())
                 .build();
     }
-    public Category toEntity(CategoryDto categoryDto){
+    public static Category toEntity(CategoryDto categoryDto){
         if(categoryDto==null){
             return null;
             //TODO Throw Exception

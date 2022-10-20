@@ -12,7 +12,7 @@ public class AddressDto {
     private String city;
     private String zipCode;
     private String country;
-    private AddressDto fromEntity(Address address){
+    public static AddressDto fromEntity(Address address){
         if(address==null){
             return null;
 
@@ -24,5 +24,16 @@ public class AddressDto {
                 .zipCode(address.getZipCode())
                 .country(address.getCountry())
                 .build();
+    }
+    public static Address toEntity(AddressDto addressDto){
+        if(addressDto==null)
+            return null;
+        Address address=new Address();
+        address.setAddress1(addressDto.getAddress1());
+        address.setAddress2(addressDto.getAddress2());
+        address.setCity(addressDto.getCity());
+        address.setZipCode(addressDto.getZipCode());
+        address.setCountry(addressDto.getCountry());
+        return address;
     }
 }
