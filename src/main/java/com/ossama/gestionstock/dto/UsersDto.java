@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Builder
@@ -18,7 +19,6 @@ public class UsersDto {
     private AddressDto address;
     private String password;
     private String phone;
-    @JsonIgnore
     private List<RolesDto> rolesList;
     private EntrepriseDto entreprise;
     public static UsersDto fromEntity(Users users){
@@ -33,6 +33,9 @@ public class UsersDto {
                 .address(AddressDto.fromEntity(users.getAddress()))
                 .password(users.getPassword())
                 .phone(users.getPhone())
+                .rolesList(users.getRolesList()!=null
+                        ?users.getRolesList().stream().map(RolesDto::fromEntity).collect(Collectors.toList())
+                        :null)
                 .build();
     }
     public static Users toEntity(UsersDto usersDto){
@@ -45,6 +48,9 @@ public class UsersDto {
         users.setPicture(usersDto.getPicture());
         users.setEmail(usersDto.getEmail());
         users.setAddress(AddressDto.toEntity(usersDto.getAddress()));
+        users.setRolesList(usersDto.getRolesList()!=null
+                ?usersDto.getRolesList().stream().map(RolesDto::toEntity).collect(Collectors.toList())
+                :null);
         users.setPassword(usersDto.getPassword());
         users.setPhone(usersDto.getPhone());
         return users;
