@@ -1,7 +1,8 @@
 package com.ossama.gestionstock.repository;
 
-import com.ossama.gestionstock.dto.EntrepriseDto;
+
+import com.ossama.gestionstock.model.Entreprise;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EntrepriseRepository extends JpaRepository<Integer, EntrepriseDto>{
+public interface EntrepriseRepository extends JpaRepository<Entreprise,Integer>{
 }

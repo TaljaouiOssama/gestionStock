@@ -1,7 +1,8 @@
 package com.ossama.gestionstock.repository;
 
-import com.ossama.gestionstock.dto.RolesDto;
+
+import com.ossama.gestionstock.model.Roles;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RolesRepository extends JpaRepository<Integer, RolesDto>{
+public interface RolesRepository extends JpaRepository<Roles,Integer>{
 }
