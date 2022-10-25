@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 
 public class Users extends AbstractEntity{
+    private String code;
     private String firstName;
     private String lastName;
     private String picture;

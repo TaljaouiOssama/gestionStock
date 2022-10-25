@@ -14,6 +14,7 @@ import java.util.List;
 @Entity
 public class Client extends AbstractEntity{
     private String firstName;
+    private String code;
     private String lastName;
     private String picture;
     @Embedded

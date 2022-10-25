@@ -15,6 +15,7 @@ import java.util.List;
 
 public class Supplier extends AbstractEntity {
     private String firstName;
+    private String code;
     private String lastName;
     private String picture;
     @Embedded

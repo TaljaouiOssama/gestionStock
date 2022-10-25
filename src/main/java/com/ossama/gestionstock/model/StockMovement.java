@@ -15,6 +15,7 @@ import java.time.Instant;
 @Entity
 
 public class StockMovement extends AbstractEntity{
+    private String code;
     private Instant mvtDate;
     private BigDecimal quantity;
     private TypeMvtStk type;

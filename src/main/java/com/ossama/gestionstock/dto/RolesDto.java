@@ -21,7 +21,6 @@ public class RolesDto {
                 .id(roles.getId())
                 .code(roles.getCode())
                 .name(roles.getName())
-                .user(UsersDto.fromEntity(roles.getUser()))
                 .build();
     }
     public static Roles toEntity(RolesDto rolesDto){
@@ -31,7 +30,6 @@ public class RolesDto {
         roles.setId(rolesDto.getId());
         roles.setCode(rolesDto.getCode());
         roles.setName(rolesDto.getName());
-        roles.setUser(UsersDto.toEntity(rolesDto.getUser()));
         return roles;
     }
 }

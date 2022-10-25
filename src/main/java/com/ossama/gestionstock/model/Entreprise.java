@@ -14,6 +14,7 @@ import java.util.List;
 @Entity
 public class Entreprise extends AbstractEntity{
     private String name;
+    private String code;
     private String description;
     @Embedded
     private Address address;

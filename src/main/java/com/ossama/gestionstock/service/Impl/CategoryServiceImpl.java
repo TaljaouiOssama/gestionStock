@@ -57,7 +57,7 @@ public class CategoryServiceImpl implements CategoryService {
             log.error("code is NULL");
             return null;
         }
-        Optional<Category> category= categoryRepository.findCategoryByByCode(code) ;
+        Optional<Category> category= categoryRepository.findCategoryByCode(code) ;
         return category.map(CategoryDto::fromEntity)
                 .orElseThrow(
                     ()->new EntityNotFoundException("Category Not Found with id"+code,ErrorsCode.Category_Not_Found)
