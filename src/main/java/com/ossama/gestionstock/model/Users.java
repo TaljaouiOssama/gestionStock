@@ -20,7 +20,7 @@ public class Users extends AbstractEntity{
     private Address address;
     private String password;
     private String phone;
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private List<Roles> rolesList;
     @ManyToOne
     @JoinColumn(name = "entrepriseId")
