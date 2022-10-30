@@ -21,7 +21,7 @@ public class Users extends AbstractEntity{
     private Address address;
     private String password;
     private String phone;
-    @OneToMany
+    @ManyToMany
     private List<Roles> rolesList;
     @ManyToOne
     @JoinColumn(name = "entrepriseId")
